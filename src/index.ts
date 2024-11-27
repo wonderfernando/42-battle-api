@@ -3,7 +3,7 @@ import fastify, { FastifyReply, FastifyRequest } from "fastify";
 const app = fastify()
 
 app.get("/", async (req: FastifyRequest, res: FastifyReply) => {
-    return res.send("hello world")
+    return res.send("hello world!")
 })
 
 app.listen({
