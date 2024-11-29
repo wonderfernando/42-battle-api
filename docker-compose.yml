@@ -6,7 +6,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=your_password
-      - POSTGRES_DB=your_database_name
+      - POSTGRES_DB=battle
     ports:
       - "5432:5432"
 
@@ -16,10 +16,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4444:4444" # Altere para a porta que sua aplicação usa
+      - "5555:5555"
     depends_on:
       - db
-    environment:
-      - DATABASE_URL=postgres://postgres:your_password@db:5432/your_database_name
     volumes:
       - ${PWD}:/app
 
