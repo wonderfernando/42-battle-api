@@ -7,6 +7,6 @@ app.get("/", async (req: FastifyRequest, res: FastifyReply) => {
 })
 
 app.listen({
-    port:3000,
+    port:4444,
     host: '0.0.0.0'
-}, ()=> console.log("running on port 3000"))
+}, ()=> console.log("running on port 4444"))

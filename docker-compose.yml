@@ -1,5 +1,4 @@
 services:
-
   db:
     image: postgres:latest
     volumes:
@@ -10,6 +9,19 @@ services:
       - POSTGRES_DB=your_database_name
     ports:
       - "5432:5432"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4444:4444" # Altere para a porta que sua aplicação usa
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:your_password@db:5432/your_database_name
+    volumes:
+      - ${PWD}:/app
 
 volumes:
   postgres_data:
