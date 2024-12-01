@@ -16,6 +16,8 @@ COPY . .
 
 RUN npm install
 
+RUN npm install -g tsx
+
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
