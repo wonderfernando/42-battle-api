@@ -13,7 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Teste {
-  id Int @id @default(autoincrement())
+model User {
+  Username String @id @unique
   name String
+  image String
+  createdAt DateTime @default(now())
 }
